@@ -163,7 +163,6 @@ public void edita_servico()
         cadastro_clientefisico_textocadastro = new javax.swing.JLabel();
         cadastro_servico_textonumcad = new javax.swing.JLabel();
         cadastro_servico_textovalor = new javax.swing.JLabel();
-        cadastro_servico_campovalor = new javax.swing.JTextField();
         cadastro_clientefisico_separador = new javax.swing.JSeparator();
         cadastro_servico_botaocancelar = new javax.swing.JButton();
         cadastro_servico_botaosalvar = new javax.swing.JButton();
@@ -174,7 +173,8 @@ public void edita_servico()
         cadastro_servico_tabelaconsulta2 = new javax.swing.JTable();
         cadastro_servico_campocodigo = new javax.swing.JTextField();
         cadastro_servico_textocomissao = new javax.swing.JLabel();
-        cadastro_servico_campocomissao = new javax.swing.JTextField();
+        cadastro_servico_campovalor = new javax.swing.JFormattedTextField();
+        cadastro_servico_campocomissao = new javax.swing.JFormattedTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -228,12 +228,6 @@ public void edita_servico()
         cadastro_servico_textonumcad.setText("Servico Nº");
 
         cadastro_servico_textovalor.setText("Valor");
-
-        cadastro_servico_campovalor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                cadastro_servico_campovalorKeyPressed(evt);
-            }
-        });
 
         cadastro_servico_botaocancelar.setText("Cancelar");
         cadastro_servico_botaocancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -315,11 +309,17 @@ public void edita_servico()
 
         cadastro_servico_textocomissao.setText("Comissao");
 
-        cadastro_servico_campocomissao.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                cadastro_servico_campocomissaoKeyPressed(evt);
-            }
-        });
+        try {
+            cadastro_servico_campovalor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$ #########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            cadastro_servico_campocomissao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$ #########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -385,9 +385,9 @@ public void edita_servico()
                     .addComponent(cadastro_servico_campodescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cadastro_servico_campovalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cadastro_servico_textovalor)
                     .addComponent(cadastro_servico_textocomissao)
+                    .addComponent(cadastro_servico_campovalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cadastro_servico_campocomissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -434,13 +434,6 @@ public void edita_servico()
             this.dispose();
         }
     }//GEN-LAST:event_cadastro_servico_campodescricaoKeyPressed
-
-    private void cadastro_servico_campovalorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cadastro_servico_campovalorKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ESCAPE)
-        {
-            this.dispose();
-        }
-    }//GEN-LAST:event_cadastro_servico_campovalorKeyPressed
 
     private void cadastro_servico_botaocancelarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cadastro_servico_botaocancelarKeyPressed
         // TODO add your handling code here:
@@ -489,10 +482,6 @@ public void edita_servico()
             this.dispose();}
     }//GEN-LAST:event_cadastro_servico_botaocadastrarKeyPressed
 
-    private void cadastro_servico_campocomissaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cadastro_servico_campocomissaoKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadastro_servico_campocomissaoKeyPressed
-
     private void cadastro_servico_campodescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastro_servico_campodescricaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cadastro_servico_campodescricaoActionPerformed
@@ -507,11 +496,11 @@ public void edita_servico()
     private javax.swing.JButton cadastro_servico_botaonovo;
     private javax.swing.JButton cadastro_servico_botaosalvar;
     private javax.swing.JTextField cadastro_servico_campocodigo;
-    private javax.swing.JTextField cadastro_servico_campocomissao;
+    private javax.swing.JFormattedTextField cadastro_servico_campocomissao;
     private javax.swing.JTextField cadastro_servico_campoconsultar;
     private javax.swing.JTextField cadastro_servico_campodescricao;
     private javax.swing.JTextField cadastro_servico_camposervico;
-    private javax.swing.JTextField cadastro_servico_campovalor;
+    private javax.swing.JFormattedTextField cadastro_servico_campovalor;
     private javax.swing.JTable cadastro_servico_tabelaconsulta2;
     private javax.swing.JLabel cadastro_servico_textocomissao;
     private javax.swing.JLabel cadastro_servico_textodescricao;

@@ -55,7 +55,7 @@ int seleciona =  servico_tabelaservico.getSelectedRow();
 servico_campocodigo.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 0).toString());
 servico_camposervico.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 1).toString());
 servico_campodescricao.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 2).toString());
-servico_campovalor.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 3).toString());
+servico_campocomissao.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 3).toString());
 servico_campocomissao.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 4).toString());
 }
 
@@ -190,7 +190,7 @@ servico_campofuncionario.setText((String) servico_tabelafuncionario.getModel().g
         servico_campocodigo.setText("") ;
         servico_camposervico.setText("") ;
         servico_campodescricao.setText("") ;
-        servico_campovalor.setText("");
+        servico_campocomissao.setText("");
         servico_campocomissao.setText("");    
     }  
 
@@ -205,7 +205,7 @@ servico_campofuncionario.setText((String) servico_tabelafuncionario.getModel().g
         
         pst.setString(1,servico_camposervico.getText());
         pst.setString(2,servico_campodescricao.getText());
-        pst.setString(3,servico_campovalor.getText());
+        pst.setString(3,servico_campocomissao.getText());
         pst.setString(4,servico_campocomissao.getText());
         
         pst.execute();
@@ -230,7 +230,7 @@ public void edita_ordemservico()
 
         pst.setString(1,servico_camposervico.getText());
         pst.setString(2,servico_campodescricao.getText());
-        pst.setString(3,servico_campovalor.getText());
+        pst.setString(3,servico_campocomissao.getText());
         pst.setString(4,servico_campocomissao.getText());
         pst.setInt(5,Integer.parseInt(servico_campocodigo.getText()));
         
@@ -246,6 +246,30 @@ public void edita_ordemservico()
 }
 
 
+public void  cadastro_ordemreceber()       
+{
+    
+    String sql = "Insert into receber(resumo,cliente,descricao,valor) values (?,?,?,?)";  
+    
+    try
+    {
+        pst = conecta.prepareStatement(sql);
+        
+        pst.setString(1,servico_camposervico.getText());
+        pst.setString(3,servico_campodescricao.getText());
+        pst.setString(4,servico_campocomissao.getText());
+        pst.setString(2,servico_campocliente.getText());
+        
+        pst.execute();
+        JOptionPane.showMessageDialog(null, "Lancamento no contas a pagar realizado com sucesso","Cadastro de Servico",JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    catch(SQLException error)
+            {
+               JOptionPane.showMessageDialog(null,error);
+            }
+}
+
 
 
     @SuppressWarnings("unchecked")
@@ -260,7 +284,6 @@ public void edita_ordemservico()
         cadastro_clientefisico_textocadastro = new javax.swing.JLabel();
         cadastro_servico_textonumcad = new javax.swing.JLabel();
         cadastro_servico_textovalor = new javax.swing.JLabel();
-        servico_campovalor = new javax.swing.JTextField();
         cadastro_clientefisico_separador = new javax.swing.JSeparator();
         cadastro_servico_botaocancelar = new javax.swing.JButton();
         cadastro_servico_botaosalvar = new javax.swing.JButton();
@@ -270,7 +293,6 @@ public void edita_ordemservico()
         servico_tabelacliente = new javax.swing.JTable();
         servico_campocodigo = new javax.swing.JTextField();
         cadastro_servico_textocomissao = new javax.swing.JLabel();
-        servico_campocomissao = new javax.swing.JTextField();
         servico_textocliente = new javax.swing.JLabel();
         servico_campocliente = new javax.swing.JTextField();
         servico_textofuncionario = new javax.swing.JLabel();
@@ -285,6 +307,8 @@ public void edita_ordemservico()
         cadastro_clientefisico_separador1 = new javax.swing.JSeparator();
         cadastro_clientefisico_separador3 = new javax.swing.JSeparator();
         servico_textofuncionario1 = new javax.swing.JLabel();
+        servico_campocomissao = new javax.swing.JFormattedTextField();
+        servico_campovalor1 = new javax.swing.JFormattedTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -341,12 +365,6 @@ public void edita_ordemservico()
         cadastro_servico_textonumcad.setText("Servico Nº");
 
         cadastro_servico_textovalor.setText("Valor");
-
-        servico_campovalor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                servico_campovalorKeyPressed(evt);
-            }
-        });
 
         cadastro_servico_botaocancelar.setText("Cancelar");
         cadastro_servico_botaocancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -409,12 +427,6 @@ public void edita_ordemservico()
         servico_campocodigo.setEnabled(false);
 
         cadastro_servico_textocomissao.setText("Comissao");
-
-        servico_campocomissao.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                servico_campocomissaoKeyPressed(evt);
-            }
-        });
 
         servico_textocliente.setText("Pesq. Cliente");
 
@@ -497,6 +509,18 @@ public void edita_ordemservico()
 
         servico_textofuncionario1.setText("Pesquisar OS");
 
+        try {
+            servico_campocomissao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$ #########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            servico_campovalor1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$ #########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -525,14 +549,14 @@ public void edita_ordemservico()
                             .addComponent(servico_textodescricao)
                             .addComponent(cadastro_servico_textovalor))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(servico_campovalor, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(servico_campovalor1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cadastro_servico_textocomissao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(servico_campocomissao, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(servico_campodescricao)))
+                                .addComponent(servico_campocomissao, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(servico_campodescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(servico_textocliente)
@@ -578,9 +602,9 @@ public void edita_ordemservico()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cadastro_servico_textovalor)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(servico_campovalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cadastro_servico_textocomissao)
-                        .addComponent(servico_campocomissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(servico_campocomissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(servico_campovalor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cadastro_clientefisico_separador, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -620,6 +644,7 @@ public void edita_ordemservico()
     private void cadastro_servico_botaocadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastro_servico_botaocadastrarActionPerformed
         // TODO add your handling code here:
         cadastro_ordemservico();
+        cadastro_ordemreceber(); 
     }//GEN-LAST:event_cadastro_servico_botaocadastrarActionPerformed
 
     private void cadastro_servico_botaosalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastro_servico_botaosalvarActionPerformed
@@ -636,13 +661,6 @@ public void edita_ordemservico()
             this.dispose();
         }
     }//GEN-LAST:event_servico_camposervicoKeyPressed
-
-    private void servico_campovalorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_servico_campovalorKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ESCAPE)
-        {
-            this.dispose();
-        }
-    }//GEN-LAST:event_servico_campovalorKeyPressed
 
     private void cadastro_servico_botaocancelarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cadastro_servico_botaocancelarKeyPressed
         // TODO add your handling code here:
@@ -680,15 +698,12 @@ public void edita_ordemservico()
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             cadastro_ordemservico();
+            cadastro_ordemreceber(); 
         }
 
         if (evt.getKeyCode() == KeyEvent.VK_ESCAPE){
             this.dispose();}
     }//GEN-LAST:event_cadastro_servico_botaocadastrarKeyPressed
-
-    private void servico_campocomissaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_servico_campocomissaoKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_servico_campocomissaoKeyPressed
 
     private void servico_campodescricaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_servico_campodescricaoKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ESCAPE)
@@ -762,12 +777,12 @@ public void edita_ordemservico()
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField servico_campocliente;
     private javax.swing.JTextField servico_campocodigo;
-    private javax.swing.JTextField servico_campocomissao;
+    private javax.swing.JFormattedTextField servico_campocomissao;
     private javax.swing.JTextField servico_campodescricao;
     private javax.swing.JTextField servico_campofuncionario;
     private javax.swing.JTextField servico_campopesquisa;
     private javax.swing.JTextField servico_camposervico;
-    private javax.swing.JTextField servico_campovalor;
+    private javax.swing.JFormattedTextField servico_campovalor1;
     private javax.swing.JTable servico_tabelacliente;
     private javax.swing.JScrollPane servico_tabelacliente1;
     private javax.swing.JTable servico_tabelafuncionario;

@@ -90,15 +90,15 @@
                           <Component id="cadastro_servico_textovalor" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="servico_campovalor" min="-2" pref="217" max="-2" attributes="0"/>
+                              <Component id="servico_campovalor1" min="-2" pref="217" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="cadastro_servico_textocomissao" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="servico_campocomissao" min="-2" pref="219" max="-2" attributes="0"/>
+                              <Component id="servico_campocomissao" min="-2" pref="217" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="servico_campodescricao" max="32767" attributes="0"/>
+                          <Component id="servico_campodescricao" min="-2" pref="495" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -156,9 +156,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="cadastro_servico_textovalor" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="servico_campovalor" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cadastro_servico_textocomissao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="servico_campocomissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="servico_campovalor1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -235,11 +235,6 @@
         <Property name="text" type="java.lang.String" value="Valor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="servico_campovalor">
-      <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="servico_campovalorKeyPressed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JSeparator" name="cadastro_clientefisico_separador">
     </Component>
     <Component class="javax.swing.JButton" name="cadastro_servico_botaocancelar">
@@ -311,11 +306,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Comissao"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="servico_campocomissao">
-      <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="servico_campocomissaoKeyPressed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="servico_textocliente">
       <Properties>
@@ -428,6 +418,20 @@
     <Component class="javax.swing.JLabel" name="servico_textofuncionario1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pesquisar OS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="servico_campocomissao">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="R$ #########" subtype="-1" type="5"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="servico_campovalor1">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="R$ #########" subtype="-1" type="5"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

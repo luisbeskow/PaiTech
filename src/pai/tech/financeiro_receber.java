@@ -376,6 +376,11 @@ receber_campovencimento.setText((String) receber_tabelapesquisa.getModel().getVa
 
         receber_textovencimento.setText("Vencimento");
 
+        try {
+            receber_campovalor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$ #########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         receber_campovalor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 receber_campovalorActionPerformed(evt);
@@ -387,7 +392,7 @@ receber_campovencimento.setText((String) receber_tabelapesquisa.getModel().getVa
         jScrollPane1.setViewportView(receber_campodescricao);
 
         try {
-            receber_campovencimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("    ##     /     ##     /     ####    ")));
+            receber_campovencimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }

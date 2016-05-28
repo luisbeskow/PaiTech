@@ -24,7 +24,7 @@
     </Property>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
-    <Property name="title" type="java.lang.String" value="Contas a receber"/>
+    <Property name="title" type="java.lang.String" value="Contas a pagar"/>
     <Property name="toolTipText" type="java.lang.String" value=""/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[574, 430]"/>
@@ -70,57 +70,55 @@
                   <Component id="servico_tabelaordem1" alignment="1" pref="584" max="32767" attributes="0"/>
                   <Component id="cadastro_clientefisico_separador3" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="cadastro_clientefisico_textocadastro" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cadastro_servico_textonumcad" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="receber_textocliente" min="-2" max="-2" attributes="0"/>
+                      <Component id="cadastro_clientefisico_textocadastro" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="pagar_textoidentificador" min="-2" max="-2" attributes="0"/>
+                          <Component id="pagar_textofornecedor" pref="67" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="receber_campocliente" alignment="1" max="32767" attributes="0"/>
+                          <Component id="pagar_campofornecedor" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="receber_campocodigo" min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="pagar_campoidentificador" min="-2" pref="55" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="receber_textoresumo" min="-2" max="-2" attributes="0"/>
+                              <Component id="pagar_textoresumo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="receber_camporesumo" max="32767" attributes="0"/>
+                              <Component id="pagar_camporesumo" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Component id="receber_tabelacliente1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="receber_textodescricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="receber_textovalor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pagar_textodescricao" max="32767" attributes="0"/>
+                          <Component id="pagar_textovalor" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="receber_campovalor" min="-2" pref="216" max="-2" attributes="0"/>
+                              <Component id="pagar_campovalor" min="-2" pref="216" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="receber_textovencimento" min="-2" max="-2" attributes="0"/>
+                              <Component id="pagar_textovencimento" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="receber_campovencimento" max="32767" attributes="0"/>
+                              <Component id="pagar_campovencimento" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" min="-2" pref="511" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="receber_botaocadastrar" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_botaocadastrar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                      <Component id="receber_botaosalvar" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="pagar_botaosalvar" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                      <Component id="receber_botaonovo" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="pagar_botaonovo" min="-2" pref="80" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="receber_botaocancelar" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_botaocancelar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="receber_textopesquisa" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_textopesquisa" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="receber_campopesquisa" max="32767" attributes="0"/>
+                      <Component id="pagar_campopesquisa" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -133,17 +131,17 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cadastro_servico_textonumcad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="receber_campocodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="receber_textoresumo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="receber_camporesumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_textoidentificador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_campoidentificador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_textoresumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_camporesumo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="cadastro_clientefisico_textocadastro" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="receber_textocliente" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_campocliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_textofornecedor" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_campofornecedor" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
               <Component id="receber_tabelacliente1" min="-2" pref="45" max="-2" attributes="0"/>
@@ -154,29 +152,29 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="receber_textodescricao" min="-2" max="-2" attributes="0"/>
+                      <Component id="pagar_textodescricao" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="receber_campovalor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_textovencimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_campovencimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_textovalor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_campovalor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_textovencimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_campovencimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_textovalor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="cadastro_clientefisico_separador3" min="-2" pref="6" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="receber_botaocadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_botaosalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_botaonovo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_botaocancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_botaocadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_botaosalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_botaonovo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_botaocancelar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="receber_campopesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="receber_textopesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_campopesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagar_textopesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="servico_tabelaordem1" pref="163" max="32767" attributes="0"/>
@@ -186,67 +184,67 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="receber_textoresumo">
+    <Component class="javax.swing.JLabel" name="pagar_textoresumo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Resumo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="receber_camporesumo">
+    <Component class="javax.swing.JTextField" name="pagar_camporesumo">
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_camporesumoKeyPressed"/>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_camporesumoKeyReleased"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_camporesumoKeyPressed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_camporesumoKeyReleased"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="receber_textodescricao">
+    <Component class="javax.swing.JLabel" name="pagar_textodescricao">
       <Properties>
         <Property name="text" type="java.lang.String" value="Descricao"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="cadastro_clientefisico_textocadastro">
     </Component>
-    <Component class="javax.swing.JLabel" name="cadastro_servico_textonumcad">
+    <Component class="javax.swing.JLabel" name="pagar_textoidentificador">
       <Properties>
         <Property name="text" type="java.lang.String" value="Identificador"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="receber_textovalor">
+    <Component class="javax.swing.JLabel" name="pagar_textovalor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Valor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="receber_botaocancelar">
+    <Component class="javax.swing.JButton" name="pagar_botaocancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receber_botaocancelarActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_botaocancelarKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagar_botaocancelarActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_botaocancelarKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="receber_botaosalvar">
+    <Component class="javax.swing.JButton" name="pagar_botaosalvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receber_botaosalvarActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_botaosalvarKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagar_botaosalvarActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_botaosalvarKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="receber_botaonovo">
+    <Component class="javax.swing.JButton" name="pagar_botaonovo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Novo"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receber_botaonovoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagar_botaonovoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="receber_botaocadastrar">
+    <Component class="javax.swing.JButton" name="pagar_botaocadastrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receber_botaocadastrarActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_botaocadastrarKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagar_botaocadastrarActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_botaocadastrarKeyPressed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="receber_tabelacliente1">
@@ -256,7 +254,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="receber_tabelacliente">
+        <Component class="javax.swing.JTable" name="pagar_tabelafornecedor">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="0" rowCount="0"/>
@@ -269,32 +267,32 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="receber_tabelaclienteMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pagar_tabelafornecedorMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="receber_campocodigo">
+    <Component class="javax.swing.JTextField" name="pagar_campoidentificador">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="receber_textocliente">
+    <Component class="javax.swing.JLabel" name="pagar_textofornecedor">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pesq. Cliente"/>
+        <Property name="text" type="java.lang.String" value="Pesq. Forn"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="receber_campocliente">
+    <Component class="javax.swing.JTextField" name="pagar_campofornecedor">
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_campoclienteKeyPressed"/>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_campoclienteKeyReleased"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_campofornecedorKeyPressed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_campofornecedorKeyReleased"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="receber_campopesquisa">
+    <Component class="javax.swing.JTextField" name="pagar_campopesquisa">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receber_campopesquisaActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_campopesquisaKeyPressed"/>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="receber_campopesquisaKeyReleased"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagar_campopesquisaActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_campopesquisaKeyPressed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagar_campopesquisaKeyReleased"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="servico_tabelaordem1">
@@ -304,7 +302,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="receber_tabelapesquisa">
+        <Component class="javax.swing.JTable" name="pagar_tabelapesquisa">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="0" rowCount="0"/>
@@ -317,31 +315,31 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="receber_tabelapesquisaMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pagar_tabelapesquisaMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JSeparator" name="cadastro_clientefisico_separador3">
     </Component>
-    <Component class="javax.swing.JLabel" name="receber_textopesquisa">
+    <Component class="javax.swing.JLabel" name="pagar_textopesquisa">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pesquisar Contas a receber"/>
+        <Property name="text" type="java.lang.String" value="Pesquisar Contas a pagar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="receber_textovencimento">
+    <Component class="javax.swing.JLabel" name="pagar_textovencimento">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vencimento"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="receber_campovalor">
+    <Component class="javax.swing.JFormattedTextField" name="pagar_campovalor">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="R$ #########" subtype="-1" type="5"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receber_campovalorActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagar_campovalorActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -351,7 +349,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="receber_campodescricao">
+        <Component class="javax.swing.JTextArea" name="pagar_campodescricao">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -359,10 +357,10 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JFormattedTextField" name="receber_campovencimento">
+    <Component class="javax.swing.JFormattedTextField" name="pagar_campovencimento">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="##/##/####" subtype="-1" type="5"/>
+          <Format format="##/##/##" subtype="-1" type="5"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
