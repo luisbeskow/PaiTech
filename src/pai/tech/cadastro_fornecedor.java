@@ -218,9 +218,9 @@ public void edita_fornecedor()
         cadastro_clientejuridico_textocidade = new javax.swing.JLabel();
         cadastro_fornecedor_campocidade = new javax.swing.JTextField();
         cadastro_clientejuridico_textouf = new javax.swing.JLabel();
-        cadastro_fornecedor_campouf = new javax.swing.JTextField();
         cadastro_clientejuridico_textocelular = new javax.swing.JLabel();
         cadastro_fornecedor_campocelular = new javax.swing.JFormattedTextField();
+        cadastro_fornecedor_campouf = new javax.swing.JFormattedTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -453,6 +453,13 @@ public void edita_fornecedor()
             }
         });
 
+        try {
+            cadastro_fornecedor_campouf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cadastro_fornecedor_campouf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -478,54 +485,51 @@ public void edita_fornecedor()
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cadastro_fornecedor_camporazao)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cadastro_fornecedor_campobairro, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_clientejuridico_textocidade)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_fornecedor_campocidade, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_clientejuridico_textouf)
-                                    .addGap(16, 16, 16)
-                                    .addComponent(cadastro_fornecedor_campouf))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cadastro_fornecedor_campologradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_clientejuridico_textonumero)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_fornecedor_camponumero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_clientejuridico_textocep)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_fornecedor_campocep))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cadastro_fornecedor_campocodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_clientejuridico_textocnpj)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_fornecedor_campocnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_clientejuridico_textoie)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_fornecedor_campoie))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(179, 179, 179)
-                                    .addComponent(cadastro_fornecedor_botaosalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cadastro_fornecedor_campoemail, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(10, 10, 10)
-                                    .addComponent(cadastro_clientejuridico_textotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_fornecedor_campotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cadastro_clientejuridico_textocelular)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cadastro_fornecedor_campocelular, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cadastro_fornecedor_campologradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_clientejuridico_textonumero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_camponumero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_clientejuridico_textocep)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_campocep))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cadastro_fornecedor_campocodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_clientejuridico_textocnpj)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_campocnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_clientejuridico_textoie)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_campoie))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cadastro_fornecedor_campoemail, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(cadastro_clientejuridico_textotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_campotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_clientejuridico_textocelular)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_campocelular, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cadastro_fornecedor_campobairro, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_clientejuridico_textocidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_fornecedor_campocidade, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cadastro_clientejuridico_textouf)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cadastro_fornecedor_campouf))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(cadastro_fornecedor_botaocadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cadastro_fornecedor_botaosalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(145, 145, 145)
                         .addComponent(cadastro_fornecedor_botaocancelar)
                         .addGap(1, 1, 1)))
                 .addContainerGap())
@@ -759,7 +763,7 @@ public void edita_fornecedor()
     private javax.swing.JFormattedTextField cadastro_fornecedor_camponumero;
     private javax.swing.JTextField cadastro_fornecedor_camporazao;
     private javax.swing.JFormattedTextField cadastro_fornecedor_campotelefone;
-    private javax.swing.JTextField cadastro_fornecedor_campouf;
+    private javax.swing.JFormattedTextField cadastro_fornecedor_campouf;
     private javax.swing.JTable cadastro_fornecedor_tabelaconsulta2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;

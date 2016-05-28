@@ -52,6 +52,7 @@ public class servico_ordem extends javax.swing.JInternalFrame
 public void mostra_servico()     
 {
 int seleciona =  servico_tabelaservico.getSelectedRow();
+servico_campocodigo.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 0).toString());
 servico_camposervico.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 1).toString());
 servico_campodescricao.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 2).toString());
 servico_campovalor.setText((String) servico_tabelaservico.getModel().getValueAt(seleciona, 3).toString());

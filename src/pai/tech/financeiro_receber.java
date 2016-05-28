@@ -146,7 +146,7 @@ public void edita_receber()
 
 public void pesquisa_receber()
 {
-    String sql = "Select * from receber where codigoreceber like ?";
+    String sql = "Select * from receber where resumo like ?";
     
     try
     {
@@ -168,6 +168,7 @@ public void pesquisa_receber()
 public void mostra_receber()     
 {
 int seleciona =  receber_tabelapesquisa.getSelectedRow();
+receber_campocodigo.setText((String) receber_tabelapesquisa.getModel().getValueAt(seleciona, 0).toString());
 receber_camporesumo.setText((String) receber_tabelapesquisa.getModel().getValueAt(seleciona, 1).toString());
 receber_campocliente.setText((String) receber_tabelapesquisa.getModel().getValueAt(seleciona, 2).toString());
 receber_campodescricao.setText((String) receber_tabelapesquisa.getModel().getValueAt(seleciona, 3).toString());
@@ -240,7 +241,7 @@ receber_campovencimento.setText((String) receber_tabelapesquisa.getModel().getVa
         setBackground(new java.awt.Color(0, 153, 255));
         setClosable(true);
         setIconifiable(true);
-        setTitle("Cadastro de servicos");
+        setTitle("Contas a receber");
         setToolTipText("");
         setMaximumSize(new java.awt.Dimension(574, 430));
         setMinimumSize(new java.awt.Dimension(574, 430));
@@ -386,7 +387,7 @@ receber_campovencimento.setText((String) receber_tabelapesquisa.getModel().getVa
         jScrollPane1.setViewportView(receber_campodescricao);
 
         try {
-            receber_campovencimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##            /          ##           /               ####")));
+            receber_campovencimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("    ##     /     ##     /     ####    ")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
