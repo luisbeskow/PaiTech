@@ -97,7 +97,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cadastro_cliente_textocep" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cadastro_cliente_campocep" max="32767" attributes="0"/>
+                              <Component id="cadastro_cliente_campocep" pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="cadastro_cliente_campocodigo" min="-2" pref="55" max="-2" attributes="0"/>
@@ -125,19 +125,19 @@
                               <Component id="cadastro_cliente_campoemail" min="-2" pref="141" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                       <Component id="cadastro_cliente_botaosalvar" min="-2" pref="79" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="cadastro_cliente_textotelefone" min="-2" pref="42" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cadastro_cliente_campotelefone" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <Component id="cadastro_cliente_campotelefone" min="-2" pref="108" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="cadastro_cliente_textocelular" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cadastro_cliente_campocelular" pref="107" max="32767" attributes="0"/>
+                                      <Component id="cadastro_cliente_campocelular" pref="115" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -424,8 +424,8 @@
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="cadastro_cliente_camponumero">
       <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="#####" subtype="-1" type="5"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
@@ -470,12 +470,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastro_cliente_campodocauxiliarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="cadastro_cliente_campouf">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="##" subtype="-1" type="5"/>
-        </Property>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="cadastro_cliente_campouf">
     </Component>
   </SubComponents>
 </Form>

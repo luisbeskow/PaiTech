@@ -126,11 +126,11 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="cadastro_clientefisico_textotelefone" min="-2" pref="42" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cadastro_funcionario_campotelefone" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="cadastro_funcionario_campotelefone" min="-2" pref="106" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="cadastro_clientefisico_textocelular" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cadastro_funcionario_campocelular" min="-2" pref="109" max="-2" attributes="0"/>
+                              <Component id="cadastro_funcionario_campocelular" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -439,8 +439,8 @@
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="cadastro_funcionario_camponumero">
       <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="#####" subtype="-1" type="5"/>
         </Property>
       </Properties>
       <Events>
