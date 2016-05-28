@@ -44,6 +44,7 @@ public class tela_principal extends javax.swing.JFrame {
         menu_servico = new javax.swing.JMenu();
         servico_ordem = new javax.swing.JMenuItem();
         menu_financeiro = new javax.swing.JMenu();
+        financeiro_receber = new javax.swing.JMenuItem();
         menu_relatorio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,6 +124,15 @@ public class tela_principal extends javax.swing.JFrame {
         menu_principal.add(menu_servico);
 
         menu_financeiro.setText("Financeiro");
+
+        financeiro_receber.setText("Contas a receber");
+        financeiro_receber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                financeiro_receberActionPerformed(evt);
+            }
+        });
+        menu_financeiro.add(financeiro_receber);
+
         menu_principal.add(menu_financeiro);
 
         menu_relatorio.setText("Relatorios");
@@ -220,6 +230,21 @@ public class tela_principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_servico_ordemActionPerformed
 
+    private void financeiro_receberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financeiro_receberActionPerformed
+        // TODO add your handling code here:
+        
+        financeiro_receber form = null;
+        try {
+            form = new financeiro_receber();
+        } 
+        catch (ClassNotFoundException ex) 
+        {
+            Logger.getLogger(tela_principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        form.setVisible(true);
+        desktop_principal.add(form);
+    }//GEN-LAST:event_financeiro_receberActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,6 +267,7 @@ public class tela_principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastro_sair;
     private javax.swing.JMenuItem cadastro_servico;
     private javax.swing.JDesktopPane desktop_principal;
+    private javax.swing.JMenuItem financeiro_receber;
     private javax.swing.JMenu menu_cadastro;
     private javax.swing.JMenu menu_financeiro;
     private javax.swing.JMenuBar menu_principal;
